@@ -1,0 +1,361 @@
+/*
+ * Tailwind v4 entry. Fonts load via <link> in src/routes/__root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * AFCSC — The History Experience design system.
+ * Bright, institutional, military-inspired: warm ivory surfaces, deep navy for
+ * strong moments, aviation blue for interaction, olive for military character,
+ * antique brass for dates and highlights.
+ */
+
+@theme inline {
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* Exhibition palette */
+  --color-ivory: var(--ivory);
+  --color-paper: var(--paper);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-aviation: var(--aviation);
+  --color-aviation-soft: var(--aviation-soft);
+  --color-olive: var(--olive);
+  --color-sage: var(--sage);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-sand: var(--sand);
+  --color-sky: var(--sky);
+  --color-ink: var(--ink);
+  --color-on-dark: var(--on-dark);
+  --color-on-dark-muted: var(--on-dark-muted);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-plate: var(--shadow-plate-v);
+  --shadow-lift: var(--shadow-lift-v);
+  --shadow-print: var(--shadow-print-v);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --ivory: oklch(0.964 0.01 93.6);
+  --paper: oklch(0.982 0.005 95.1);
+  --navy: oklch(0.28 0.038 242.3);
+  --navy-deep: oklch(0.227 0.03 241.6);
+  --aviation: oklch(0.464 0.065 234.3);
+  --aviation-soft: oklch(0.86 0.03 230);
+  --olive: oklch(0.54 0.041 131.6);
+  --sage: oklch(0.644 0.035 123);
+  --brass: oklch(0.657 0.095 78.3);
+  --brass-soft: oklch(0.83 0.075 84.6);
+  --sand: oklch(0.881 0.022 85.9);
+  --sky: oklch(0.93 0.022 225);
+  --ink: oklch(0.267 0.023 243.4);
+  --on-dark: oklch(0.964 0.01 93.6);
+  --on-dark-muted: oklch(0.8 0.02 230);
+
+  --background: var(--ivory);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--navy);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--sand);
+  --secondary-foreground: var(--navy);
+  --muted: oklch(0.93 0.014 90);
+  --muted-foreground: oklch(0.47 0.025 240);
+  --accent: var(--brass);
+  --accent-foreground: oklch(0.2 0.02 70);
+  --destructive: oklch(0.55 0.17 28);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: var(--sand);
+  --input: var(--sand);
+  --ring: var(--aviation);
+
+  --chart-1: var(--aviation);
+  --chart-2: var(--olive);
+  --chart-3: var(--brass);
+  --chart-4: var(--sage);
+  --chart-5: var(--navy);
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--navy);
+  --sidebar-primary-foreground: var(--ivory);
+  --sidebar-accent: var(--sand);
+  --sidebar-accent-foreground: var(--navy);
+  --sidebar-border: var(--sand);
+  --sidebar-ring: var(--aviation);
+
+  --gradient-sky: radial-gradient(120% 90% at 50% 0%, oklch(0.94 0.028 228) 0%, var(--paper) 55%, var(--ivory) 100%);
+  --gradient-brass: linear-gradient(90deg, var(--brass) 0%, var(--brass-soft) 50%, var(--brass) 100%);
+  --gradient-navy: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, oklch(0.36 0.05 236) 100%);
+  --gradient-photo-fade: linear-gradient(180deg, transparent 35%, color-mix(in oklab, var(--navy-deep) 88%, transparent) 100%);
+  --gradient-side-fade: linear-gradient(90deg, color-mix(in oklab, var(--navy-deep) 92%, transparent) 0%, color-mix(in oklab, var(--navy-deep) 55%, transparent) 50%, transparent 100%);
+
+  --shadow-plate-v: 0 1px 2px color-mix(in oklab, var(--navy) 8%, transparent), 0 12px 32px -12px color-mix(in oklab, var(--navy) 22%, transparent);
+  --shadow-lift-v: 0 2px 4px color-mix(in oklab, var(--navy) 10%, transparent), 0 28px 60px -20px color-mix(in oklab, var(--navy) 38%, transparent);
+  --shadow-print-v: 0 1px 1px color-mix(in oklab, var(--ink) 12%, transparent), 0 10px 22px -8px color-mix(in oklab, var(--ink) 35%, transparent), 0 30px 60px -30px color-mix(in oklab, var(--ink) 30%, transparent);
+
+  --ease-exhibit: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  /* Stage-like scaling: 16px at 1920x1080, proportional on other 16:9 screens. */
+  html {
+    font-size: clamp(10px, min(0.8333vw, 1.4815vh), 28px);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  img {
+    -webkit-user-drag: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-aviation);
+    outline-offset: 3px;
+  }
+}
+
+/* ——— Typography ——— */
+@utility font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* ——— Surfaces ——— */
+@utility bg-sky-wash {
+  background-image: var(--gradient-sky);
+}
+
+@utility bg-navy-gradient {
+  background-image: var(--gradient-navy);
+}
+
+@utility bg-brass-gradient {
+  background-image: var(--gradient-brass);
+}
+
+@utility bg-photo-fade {
+  background-image: var(--gradient-photo-fade);
+}
+
+@utility bg-side-fade {
+  background-image: var(--gradient-side-fade);
+}
+
+@utility paper-grain {
+  background-image:
+    radial-gradient(color-mix(in oklab, var(--navy) 7%, transparent) 1px, transparent 1px);
+  background-size: 1.5rem 1.5rem;
+}
+
+@utility dotted-rule {
+  background-image: radial-gradient(circle, var(--brass) 1.2px, transparent 1.6px);
+  background-size: 10px 4px;
+  background-repeat: repeat-x;
+  background-position: left center;
+}
+
+@utility print-frame {
+  background: var(--card);
+  padding: 0.65rem;
+  box-shadow: var(--shadow-print-v);
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ——— Touch press feedback ——— */
+@utility pressable {
+  transition:
+    transform 180ms var(--ease-exhibit),
+    box-shadow 220ms var(--ease-exhibit),
+    background-color 220ms var(--ease-exhibit),
+    color 220ms var(--ease-exhibit);
+  &:active {
+    transform: scale(0.965);
+  }
+}
+
+/* ——— Ambient animations ——— */
+@keyframes radar-sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ken-burns {
+  0% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.14) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+@keyframes glint {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  60%,
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.4rem);
+  }
+}
+
+@utility animate-radar {
+  animation: radar-sweep 9s linear infinite;
+}
+@utility animate-ken-burns {
+  animation: ken-burns 18s var(--ease-exhibit) infinite alternate;
+}
+@utility animate-glint {
+  animation: glint 5.5s var(--ease-exhibit) infinite;
+}
+@utility animate-pulse-ring {
+  animation: pulse-ring 2.4s var(--ease-exhibit) infinite;
+}
+@utility animate-dash-flow {
+  animation: dash-flow 2.2s linear infinite;
+}
+@utility animate-marquee {
+  animation: marquee 60s linear infinite;
+}
+@utility animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
